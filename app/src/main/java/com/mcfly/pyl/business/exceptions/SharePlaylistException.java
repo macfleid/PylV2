@@ -7,21 +7,21 @@ package com.mcfly.pyl.business.exceptions;
  * Last change : [20/11/2015]
  * Author :  [mcfly]
  */
-public class PlaylistSavingException extends Exception {
+public class SharePlaylistException extends Exception {
 
-    public PlaylistSavingException() {
+    public SharePlaylistException() {
         super();
     }
 
-    public PlaylistSavingException(String detailMessage) {
+    public SharePlaylistException(String detailMessage) {
         super(detailMessage);
     }
 
-    public PlaylistSavingException(String detailMessage, Throwable throwable) {
+    public SharePlaylistException(String detailMessage, Throwable throwable) {
         super(detailMessage, throwable);
     }
 
-    public PlaylistSavingException(Throwable throwable) {
+    public SharePlaylistException(Throwable throwable) {
         super(throwable);
     }
 }
