@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Pyl</string>
+
+    <string-array name="shared_playlist_menus">
+        <item>Shared with me</item>
+        <item>Mines</item>
+        <item>Favorites</item>
+    </string-array>
 </resources>

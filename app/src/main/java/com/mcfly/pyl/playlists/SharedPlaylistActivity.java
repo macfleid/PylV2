@@ -22,7 +22,11 @@ public class SharedPlaylistActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shared_playlist);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
+        viewPagerAdapter = new PlaylistsActivityMenuAdapter(getFragmentManager());
+        viewPager.setAdapter(viewPagerAdapter);
+        setupTabs(tabLayout);
     }
 
     @Override
@@ -37,7 +41,12 @@ public class SharedPlaylistActivity extends AppCompatActivity {
     ////////////////////////////////////////////////////////////////////
 
     private void setupTabs(TabLayout tabLayout) {
-
+        String[] menuList = getResources().getStringArray(R.array.shared_playlist_menus);
+        for (String menuElement : menuList) {
+            TabLayout.Tab tab = tabLayout.newTab();
+            tab.setText(menuElement);
+            tabLayout.addTab(tab);
+        }
     }
 
 
