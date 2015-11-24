@@ -60,9 +60,15 @@ public class ContactBusinessTest extends ActivityInstrumentationTestCase2<Shared
 
     /////////////////////////////////////////////////////////////////////////
 
+    /**
+     * Get the me contact from systeme DB
+     * save a link to it in app db or get it from it
+     * @throws ContactBusinessException
+     */
     public void testGetMeContact() throws ContactBusinessException {
         ContactBusinessImpl business = new ContactBusinessImpl();
         Contact result = business.getMeContact(getActivity());
-        Log.d(TAG, "Result :"+result);
+        assertNotNull(result);
+        assertNotNull(result.getname());
     }
 }
