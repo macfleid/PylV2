@@ -21,7 +21,17 @@ public class Playlist implements Serializable {
     private Date date;
     private int Contact__id;
 
-    public int get_id() { 
+    public Playlist() {
+    }
+
+    public Playlist(String title, int rate, Date date, int contact__id) {
+        this.title = title;
+        this.rate = rate;
+        this.date = date;
+        Contact__id = contact__id;
+    }
+
+    public int get_id() {
         return _id;
     }
 

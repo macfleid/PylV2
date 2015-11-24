@@ -24,4 +24,6 @@ public class PlaylistDAO extends BaseDAO implements IPlaylist {
        int result = add(PlaylistDalWrapper.getContentValueFromObject(element));
        return result;
     }
+
+
 }

@@ -37,7 +37,8 @@ public class PlaylistDalWrapper {
         values.put(Playlist.COLUMN_RATE,object_.getrate());
         String dateString = DateGetter.getInstance().getStringFromDate(object_.getdate());
         values.put(Playlist.COLUMN_DATE,dateString);
-        values.put(Playlist.COLUMN_CONTACT__ID,object_.getContact__id());
+        if(object_.getContact__id()!=0)
+            values.put(Playlist.COLUMN_CONTACT__ID,object_.getContact__id());
         return values;
     }
 

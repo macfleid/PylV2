@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">Pyl</string>
 
+    <!-- ******************** -->
+    <!-- playlist activity    -->
+    <!-- ******************** -->
+    <string name="no_playlist_label">No playlist here</string>
+
+    <!-- ******************** -->
+    <!-- create playlist activity    -->
+    <!-- ******************** -->
+    <string name="create_activity_label">New playlist</string>
+    <string name="create_playlist_title">Title</string>
+
     <string-array name="shared_playlist_menus">
         <item>Shared with me</item>
         <item>Mines</item>

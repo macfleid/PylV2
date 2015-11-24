@@ -22,15 +22,6 @@
             android:layout_width="match_parent"
             style="@style/ActionBarTheme"
             app:layout_scrollFlags="scroll|enterAlways"/>
-        <!--will stay on scroll-->
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tabLayout"
-            android:background="?attr/colorPrimary"
-            app:tabMode="scrollable"
-            app:tabGravity="fill"
-            android:layout_below="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -39,13 +30,30 @@
 
     </android.support.design.widget.AppBarLayout>
 
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
+    <LinearLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:background="@android:color/white"/>
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent">
+            <EditText
+                android:text=""
+                android:hint="@string/create_playlist_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+
 
 
 </android.support.design.widget.CoordinatorLayout>

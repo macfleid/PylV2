@@ -1,5 +1,7 @@
 package com.mcfly.pyl.business;
 
+import android.content.Context;
+
 import com.mcfly.pyl.business.exceptions.PlaylistSavingException;
 import com.mcfly.pyl.business.exceptions.SharePlaylistException;
 import com.mcfly.pyl.sqlite.dal.Contact;
@@ -21,7 +23,7 @@ public interface PlaylistBusiness {
      * @param from if mine from is null
      * @throws PlaylistSavingException
      */
-    public void saveNewPlaylist(String title, Contact from) throws PlaylistSavingException;
+    public void saveNewPlaylist(Context context, String title, Contact from) throws PlaylistSavingException;
 
     /**
      * you cannot share a playlist you do not own (Contact_id is null when you own it)
@@ -29,7 +31,7 @@ public interface PlaylistBusiness {
      * @param contacts
      * @throws SharePlaylistException
      */
-    public void shareMyPLaylist(Playlist playlist, Contact[] contacts) throws SharePlaylistException;
+    public void shareMyPLaylist(Context context, Playlist playlist, Contact[] contacts) throws SharePlaylistException;
 
     /**
      * throws on :
@@ -42,7 +44,7 @@ public interface PlaylistBusiness {
      * @param title
      * @throws PlaylistSavingException
      */
-    public void saveSong(Playlist playlist, String link, String artiste, String title) throws PlaylistSavingException;
+    public void saveSong(Context context, Playlist playlist, String link, String artiste, String title) throws PlaylistSavingException;
 
     /**
      * - remove a song from a playlist you do not own throws error
@@ -51,5 +53,7 @@ public interface PlaylistBusiness {
      * @param song
      * @throws PlaylistSavingException
      */
-    public void removeSong(Playlist playlist, Song song) throws PlaylistSavingException;
+    public void removeSong(Context context, Playlist playlist, Song song) throws PlaylistSavingException;
+
+
 }
