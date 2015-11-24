@@ -1,6 +1,8 @@
 package com.mcfly.pyl.sqlite.dao.extended;
 
 import android.content.Context;
+
+import com.mcfly.pyl.sqlite.cursor.ContactCursor;
 import com.mcfly.pyl.sqlite.dal.wrapper.ContactDalWrapper;
 
 import android.database.Cursor;
@@ -23,5 +25,24 @@ public class ContactDAO extends BaseDAO implements IContact {
     public int save(Contact element) {
        int result = add(ContactDalWrapper.getContentValueFromObject(element));
        return result;
+    }
+
+    public Contact getContact(String name) {
+        Cursor cursor = context.getContentResolver().query(contentProviderUri,
+                null,
+                String.format("%s='%s'", Contact.COLUMN_NAME, name),
+                null,
+                null);
+        Contact contact = null;
+        if(cursor!=null && cursor.moveToFirst()) {
+            contact = ContactDalWrapper.getObjectFromDB(new ContactCursor(cursor), 0);
+            cursor.close();
+        }
+        return contact;
+    }
+
+    @Override
+    public Contact getContact(int id) {
+        return null; //TODO
     }
 }

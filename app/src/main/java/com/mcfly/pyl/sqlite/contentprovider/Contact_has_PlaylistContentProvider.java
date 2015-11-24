@@ -16,7 +16,7 @@ public class Contact_has_PlaylistContentProvider extends ContentProvider {
     private DbManager dbManager;
     private static final String BASE_PATH = "Contact_has_Playlist";
 
-    public static final String AUTHORITY = "com.kayentis.epro.sqlite.contentprovider.Contact_has_PlaylistContentProvider";
+    public static final String AUTHORITY = "com.mcfly.pyl.sqlite.contentprovider.Contact_has_PlaylistContentProvider";
     public static final Uri CONTENT_URI = Uri.parse("content://" +AUTHORITY+ "/" + BASE_PATH);
     public static final String TYPE = "Contact_has_Playlist";
 

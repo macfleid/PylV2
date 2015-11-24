@@ -2,6 +2,7 @@ package com.mcfly.pyl.business;
 
 import android.content.Context;
 
+import com.mcfly.pyl.business.exceptions.ContactBusinessException;
 import com.mcfly.pyl.business.exceptions.PlaylistSavingException;
 import com.mcfly.pyl.business.exceptions.SharePlaylistException;
 import com.mcfly.pyl.sqlite.dal.Contact;
@@ -23,7 +24,7 @@ public interface PlaylistBusiness {
      * @param from if mine from is null
      * @throws PlaylistSavingException
      */
-    public void saveNewPlaylist(Context context, String title, Contact from) throws PlaylistSavingException;
+    public void saveNewPlaylist(Context context, String title, Contact from) throws PlaylistSavingException, ContactBusinessException;
 
     /**
      * you cannot share a playlist you do not own (Contact_id is null when you own it)

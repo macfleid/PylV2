@@ -60,7 +60,7 @@ public class DbManager extends SQLiteOpenHelper
         Log.d("DbManager", "...call onCreate");
         createFromSQL(db);
         createViews(db);
-        createTriggers(db);
+//        createTriggers(db);
     }
 
     @Override

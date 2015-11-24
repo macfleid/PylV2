@@ -11,6 +11,7 @@ import android.view.MenuItem;
 
 import com.mcfly.pyl.R;
 import com.mcfly.pyl.business.PlaylistBusiness;
+import com.mcfly.pyl.business.exceptions.ContactBusinessException;
 import com.mcfly.pyl.business.exceptions.PlaylistSavingException;
 import com.mcfly.pyl.business.impl.PlaylistBusinessImpl;
 
@@ -64,6 +65,8 @@ public class CreatePlaylistActivity extends AppCompatActivity {
         try {
             playlistBusiness.saveNewPlaylist(getApplicationContext(),"Title",null);
         } catch (PlaylistSavingException e) {
+            Log.e(TAG, "Error while saving new playlist", e);
+        } catch (ContactBusinessException e) {
             Log.e(TAG, "Error while saving new playlist", e);
         }
     }

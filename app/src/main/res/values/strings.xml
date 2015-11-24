@@ -5,6 +5,7 @@
     <!-- playlist activity    -->
     <!-- ******************** -->
     <string name="no_playlist_label">No playlist here</string>
+    <string name="playlist_list_item_secondline_pattern" formatted="false">Shared by %s on %s</string>
 
     <!-- ******************** -->
     <!-- create playlist activity    -->
